@@ -39,7 +39,7 @@ def on_type(data):
 
 df = pd.read_csv("all_drinks.csv")
 
-print(df)
+#print(df)
 
 df1 = df.replace(np.nan, '', regex=True)
 
@@ -49,12 +49,12 @@ cols = ['strIngredient1','strIngredient10','strIngredient11','strIngredient12','
 df1['combined'] = df1[cols].apply(lambda row: ' '.join(row.values.astype(str)), axis=1)
 df1["clean_combined"] = df1["combined"].apply(clean_combined)
 
-print(df1)
+#print(df1)
 
 vectorizer = TfidfVectorizer(ngram_range=(1,2))
 tfidf = vectorizer.fit_transform(df1["clean_combined"])
 
-search("vodka")
+#search("vodka")
 # df1_input = widgets.Text(
 #     value = "Vodka",
 #     description = "Ingredients:",
