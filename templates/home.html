@@ -12,6 +12,11 @@
           background-attachment: fixed;
           background-size: cover;
         }
+        @media screen and (max-width: 1000px) {
+           html {
+            zoom:170%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -26,7 +31,7 @@
 
 <form action="/results" method="POST">
   <div class="form-group">
-    <input style="width:500px; margin:auto; float:center;" name="ingredients" type="search" class="form-control form-control-lg" autocomplete="off" id="ingredients" aria-describedby="regSearch" placeholder="What ingredients do you like?" title="Enter at least one ingredient" oninvalid="this.setCustomValidity('Enter at least one ingredient')" oninput="this.setCustomValidity('')" required>
+    <input style="width:500px; margin:auto; float:center;" name="ingredients" type="search" class="form-control form-control-lg" autocomplete="off" id="ingredients" aria-describedby="drinkSearch" placeholder="What ingredients do you like?" title="Enter at least one ingredient" oninvalid="this.setCustomValidity('Enter at least one ingredient')" oninput="this.setCustomValidity('')" required>
   </div>
     <div class="buttonHolder" style="text-align:center;">
         <br/>

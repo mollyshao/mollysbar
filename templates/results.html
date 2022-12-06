@@ -15,6 +15,11 @@
             color:black;
             font-family:cursive;
         }
+        img {
+                width:130px;
+                height:130px;
+            }
+
         @media screen and (max-width: 1000px) {
             #horizontal {
                     display: none !important;
@@ -22,7 +27,15 @@
             #vertical {
                 display: block !important;
                 }
+            p {
+                font-size:32px;
+                }
+            img {
+                width:300px !important;
+                height:300px !important;
+            }
         }
+
     </style>
 </head>
 
@@ -43,7 +56,7 @@
     {% for drink_dict in results %}
         <div class="col-2" id="drink_{{ loop.index }}">
             <img src="{{ drink_dict['strDrinkThumb'] }}" alt="{{ drink_dict['strDrink'] }}"
-                 style="width: 130px; height:130px;" class="rounded">
+                 style="" class="rounded">
             <h4>{{ drink_dict['strDrink'] }}</h4>
             <p><b>{{ drink_dict['strCategory'] }}</b></p>
             <br/>
@@ -57,6 +70,7 @@
   </div>
 
   <div class="col" id="vertical" style="text-align:center; display:none">
+      <br/><br/><br/>
     {% for drink_dict in results %}
         <div class="" id="drink_{{ loop.index }}">
             <img src="{{ drink_dict['strDrinkThumb'] }}" alt="{{ drink_dict['strDrink'] }}"
@@ -68,7 +82,9 @@
             <br/>
             <p><b>Steps: </b>{{ drink_dict['strInstructions'] }}</p>
             <button class="btn btn-light" onclick="window.location.href='/soundsgood?drink={{ drink_dict['strDrink'] }}';">See more like this</button>
-            <br/><br/><hr/><br/><br/>
+            <br/><br/>
+            <div style="outline:1px solid black; height:1px; width:100%; background-color:black;"></div>
+            <br/><br/>
         </div>
     {% endfor %}
 </div>
