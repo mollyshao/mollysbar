@@ -50,7 +50,7 @@ if __name__ == "__main__":
     # print("http://{}:{}".format(local_ip, PORT))
     print("http://{}".format(local_ip))
     # -- prod using waitress --
-    serve(app, host="0.0.0.0", port=5000)   # prod run with waitress server
+    serve(app, host="0.0.0.0", port=80)   # prod run with waitress server
     # serve(app, host="0.0.0.0", port=80, threads=6, _quiet=True)   # prod run with waitress server
     # -- --
     # app.run()
